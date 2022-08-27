@@ -1,0 +1,188 @@
+body{
+  background-color: #cccaca;
+  font-family: sans-serif;
+}
+
+header {
+  margin: 50px auto;
+  text-align: center;
+}
+
+.animation-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.box{
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 190px;
+  height: 130px;
+}
+
+
+.loading-1 {
+  font-weight: bold;
+  font-family: monospace;
+  font-size: 30px;
+  clip-path: inset(0 3ch 0 0);
+  animation:c4 1s steps(4) infinite;
+}
+@keyframes c4 {to{clip-path: inset(0 -1ch 0 0)}}
+
+
+.loading-2 {
+  width: 50px;
+  aspect-ratio: 1;
+  --_c: radial-gradient(farthest-side,#0ead69 92%,#0000);
+  background: var(--_c) top, var(--_c) left, var(--_c) right, var(--_c) bottom;
+  background-size: 12px 12px;
+  background-repeat: no-repeat;
+  animation: s7 1s infinite;
+}
+@keyframes s7 {to{transform: rotate(.5turn)}}
+
+
+.loading-3 {
+  aspect-ratio: 1;
+  border: 8px solid #bfcadc;
+  border-right-color: #251382;
+  border-radius: 50%;
+  width: 50px;
+  animation: s2 1s infinite linear;
+}
+@keyframes s2 {to{transform: rotate(1turn)}}
+
+
+.loading-4 {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #7cb518;
+  clip-path: polygon(0 0,100% 0,100% 100%,0 100%);
+  animation: sh1 2s infinite cubic-bezier(0.3,1,0,1);
+}
+@keyframes sh1 {
+33% {border-radius: 0;background:#e5383b ;clip-path: polygon(0 0,100% 0,100% 100%,0 100%)}
+66% {border-radius: 0;background:#00b2ca ;clip-path: polygon(50% 0,50% 0,100% 100%,0 100%)}
+}
+
+
+.loading-5 {
+  width: 120px;
+  height: 20px;
+  border-radius: 20px;
+  background: linear-gradient(#1f7a8c 0 0) 0/0% no-repeat #e1e5f2;
+  animation: p2 2s infinite steps(10);
+}
+@keyframes p2 {
+    100% {background-size:110%}
+}
+
+
+.loading-6 {
+  width: 40px;
+  height: 40px;
+  color:#f9844a;
+  position: relative;
+  background:
+    conic-gradient(from 134deg at top   ,currentColor 92deg,#0000 0) top,
+    conic-gradient(from -46deg at bottom,currentColor 92deg,#0000 0) bottom;
+  background-size:100% 50%;
+  background-repeat: no-repeat;
+}
+.loading-6:before {
+  content:'';
+  position: absolute;
+  inset:0;
+  background:
+    conic-gradient(from  -135deg at top 0    left   22px ,#0000 ,currentColor 1deg 90deg,#0000 0),
+    conic-gradient(from  -45deg  at right 0  top    22px ,#0000 ,currentColor 1deg 90deg,#0000 0),
+    conic-gradient(from   45deg  at bottom 0 right  22px ,#0000 ,currentColor 1deg 90deg,#0000 0),
+    conic-gradient(from  135deg  at left  0  bottom 20px ,#0000 ,currentColor 1deg 90deg,#0000 0);
+   animation: sh7 1.5s infinite cubic-bezier(0.3,1,0,1);
+}
+@keyframes sh7 {
+   33%  {inset:-10px;transform: rotate(0deg)}
+   66%  {inset:-10px;transform: rotate(90deg)}
+   100% {inset:0    ;transform: rotate(90deg)}
+}
+
+
+.loading-7 {
+  width: 40px;
+  height: 40px;
+  color:#00b2ca;
+  background:
+    linear-gradient(currentColor 0 0),
+    linear-gradient(currentColor 0 0),
+    linear-gradient(currentColor 0 0),
+    linear-gradient(currentColor 0 0);
+  background-size: 21px 21px;
+  background-repeat:no-repeat;
+  animation: sh5 1.5s infinite cubic-bezier(0.3,1,0,1);
+}
+@keyframes sh5 {
+ 0%   {background-position: 0    0,100% 0   ,100% 100%,0 100%}
+ 33%  {background-position: 0    0,100% 0   ,100% 100%,0 100%;width:60px;height: 60px}
+ 66%  {background-position: 100% 0,100% 100%,0    100%,0 0   ;width:60px;height: 60px}
+ 100% {background-position: 100% 0,100% 100%,0    100%,0 0   }
+}
+
+
+.loading-8 {
+  width:50px;
+  height:50px;
+  color:#38b000;
+  background:
+   radial-gradient(circle at 60% 65%, currentColor 62%, #0000 65%) top left,
+   radial-gradient(circle at 40% 65%, currentColor 62%, #0000 65%) top right,
+   linear-gradient(to bottom left, currentColor 42%,#0000 43%) bottom left ,
+   linear-gradient(to bottom right,currentColor 42%,#0000 43%) bottom right;
+  background-size:50% 50%;
+  background-repeat:no-repeat;
+  position:relative;
+}
+.loading-8:after {
+  content:"";
+  position:absolute;
+  inset:0;
+  background:inherit;
+  opacity:0.4;
+  animation:pl3 1s infinite;
+}
+@keyframes pl3 {
+  to {transform:scale(1.8);opacity:0}
+}
+
+
+.loading-9 {
+  color:#00b2ca ;
+  border:2px solid;
+  width:120px;
+  height:22px;
+  border-radius: 40px;
+  position: relative;
+}
+.loading-9::before {
+  content:"";
+  position: absolute;
+  margin:2px;
+  width:25%;
+  top:0;
+  bottom:0;
+  left:0;
+  border-radius: inherit;
+  background:currentColor;
+  animation:w3 1s infinite linear;
+}
+@keyframes w3 {
+    50% {left:100%;transform: translateX(calc(-100% - 4px))}
+}

@@ -1,0 +1,100 @@
+body{
+  background-color: #cccaca;
+  font-family: sans-serif;
+}
+
+header {
+  margin: 50px auto;
+  text-align: center;
+}
+
+.animation-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.box{
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 190px;
+  height: 130px;
+}
+
+
+.loading-7 {
+  width: 40px;
+  height: 40px;
+  color:#00b2ca;
+  background:
+    linear-gradient(currentColor 0 0),
+    linear-gradient(currentColor 0 0),
+    linear-gradient(currentColor 0 0),
+    linear-gradient(currentColor 0 0);
+  background-size: 21px 21px;
+  background-repeat:no-repeat;
+  animation: sh5 1.5s infinite cubic-bezier(0.3,1,0,1);
+}
+@keyframes sh5 {
+ 0%   {background-position: 0    0,100% 0   ,100% 100%,0 100%}
+ 33%  {background-position: 0    0,100% 0   ,100% 100%,0 100%;width:60px;height: 60px}
+ 66%  {background-position: 100% 0,100% 100%,0    100%,0 0   ;width:60px;height: 60px}
+ 100% {background-position: 100% 0,100% 100%,0    100%,0 0   }
+}
+
+
+.loading-8 {
+  width:50px;
+  height:50px;
+  color:#38b000;
+  background:
+   radial-gradient(circle at 60% 65%, currentColor 62%, #0000 65%) top left,
+   radial-gradient(circle at 40% 65%, currentColor 62%, #0000 65%) top right,
+   linear-gradient(to bottom left, currentColor 42%,#0000 43%) bottom left ,
+   linear-gradient(to bottom right,currentColor 42%,#0000 43%) bottom right;
+  background-size:50% 50%;
+  background-repeat:no-repeat;
+  position:relative;
+}
+.loading-8:after {
+  content:"";
+  position:absolute;
+  inset:0;
+  background:inherit;
+  opacity:0.4;
+  animation:pl3 1s infinite;
+}
+@keyframes pl3 {
+  to {transform:scale(1.8);opacity:0}
+}
+
+
+.loading-9 {
+  color:#00b2ca ;
+  border:2px solid;
+  width:120px;
+  height:22px;
+  border-radius: 40px;
+  position: relative;
+}
+.loading-9::before {
+  content:"";
+  position: absolute;
+  margin:2px;
+  width:25%;
+  top:0;
+  bottom:0;
+  left:0;
+  border-radius: inherit;
+  background:currentColor;
+  animation:w3 1s infinite linear;
+}
+@keyframes w3 {
+    50% {left:100%;transform: translateX(calc(-100% - 4px))}
+}

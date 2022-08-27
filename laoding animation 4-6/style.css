@@ -1,0 +1,83 @@
+body{
+  background-color: #cccaca;
+  font-family: sans-serif;
+}
+
+header {
+  margin: 50px auto;
+  text-align: center;
+}
+
+.animation-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.box{
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 190px;
+  height: 130px;
+}
+
+
+.loading-4 {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #7cb518;
+  clip-path: polygon(0 0,100% 0,100% 100%,0 100%);
+  animation: sh1 2s infinite cubic-bezier(0.3,1,0,1);
+}
+@keyframes sh1 {
+33% {border-radius: 0;background:#e5383b ;clip-path: polygon(0 0,100% 0,100% 100%,0 100%)}
+66% {border-radius: 0;background:#00b2ca ;clip-path: polygon(50% 0,50% 0,100% 100%,0 100%)}
+}
+
+
+.loading-5 {
+  width: 120px;
+  height: 20px;
+  border-radius: 20px;
+  background: linear-gradient(#1f7a8c 0 0) 0/0% no-repeat #e1e5f2;
+  animation: p2 2s infinite steps(10);
+}
+@keyframes p2 {
+    100% {background-size:110%}
+}
+
+
+.loading-6 {
+  width: 40px;
+  height: 40px;
+  color:#f9844a;
+  position: relative;
+  background:
+    conic-gradient(from 134deg at top   ,currentColor 92deg,#0000 0) top,
+    conic-gradient(from -46deg at bottom,currentColor 92deg,#0000 0) bottom;
+  background-size:100% 50%;
+  background-repeat: no-repeat;
+}
+.loading-6:before {
+  content:'';
+  position: absolute;
+  inset:0;
+  background:
+    conic-gradient(from  -135deg at top 0    left   22px ,#0000 ,currentColor 1deg 90deg,#0000 0),
+    conic-gradient(from  -45deg  at right 0  top    22px ,#0000 ,currentColor 1deg 90deg,#0000 0),
+    conic-gradient(from   45deg  at bottom 0 right  22px ,#0000 ,currentColor 1deg 90deg,#0000 0),
+    conic-gradient(from  135deg  at left  0  bottom 20px ,#0000 ,currentColor 1deg 90deg,#0000 0);
+   animation: sh7 1.5s infinite cubic-bezier(0.3,1,0,1);
+}
+@keyframes sh7 {
+   33%  {inset:-10px;transform: rotate(0deg)}
+   66%  {inset:-10px;transform: rotate(90deg)}
+   100% {inset:0    ;transform: rotate(90deg)}
+}
